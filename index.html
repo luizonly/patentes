@@ -1,179 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invenções e Patentes</title>
-<style>
-/* ===== Reset básico ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* ===== Tipografia e cores ===== */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #333333;
-    line-height: 1.6;
-}
-h2 {
-    color: #01b72f;
-    text-transform: uppercase;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-/* ===== Header ===== */
-header {
-    background: linear-gradient(135deg, #01b72f, #009933);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-header img { height: 100px; margin-bottom: 15px; }
-header h1 { font-size: 36px; margin: 10px 0; }
-header p { font-size: 16px; }
-
-/* ===== Menu ===== */
-nav {
-    background-color: #ffffff;
-    padding: 10px 5px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    overflow-x: auto;
-    white-space: nowrap;
-}
-nav a {
-    display: inline-block;
-    margin: 0 5px;
-    text-decoration: none;
-    color: #01b72f;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-nav a:hover, nav a.active {
-    background-color: #c8f0d4;
-    color: #006622;
-}
-
-/* ===== Seções ===== */
-section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 20px auto;
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-/* ===== Imagens ===== */
-.imagem-centro {
-    text-align: center;
-    margin: 25px 0;
-}
-.imagem-centro img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.6s, filter 0.6s;
-}
-.imagem-centro img.visible {
-    transform: translateY(0) scale(1.05);
-    filter: brightness(1.1);
-}
-.imagem-centro p {
-    font-size: 14px;
-    color: #555;
-    margin-top: 8px;
-    font-style: italic;
-}
-
-/* ===== Listas e tabelas ===== */
-ul, ol { margin-left: 20px; margin-bottom: 15px; }
-.alunos-lista table {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: #fefefe;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-.alunos-lista th, .alunos-lista td {
-    padding: 12px;
-    border: 1px solid #01b72f;
-    text-align: left;
-    transition: background-color 0.3s;
-}
-.alunos-lista th { background-color: #01b72f; color: white; }
-.alunos-lista tr:nth-child(even) { background-color: #e6f6ea; }
-.alunos-lista tr:hover td { background-color: #c8f0d4; }
-.alunos-lista td.nome::before { content: "🧑‍🎓 "; margin-right: 5px; }
-
-/* ===== Footer ===== */
-footer {
-    background-color: #f0fdf4;
-    color: #555;
-    padding: 25px 20px;
-    border-top: 3px solid #01b72f;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* ===== Responsividade ===== */
-@media screen and (max-width: 1200px) {
-    section { padding: 35px 15px; }
-}
-@media screen and (max-width: 992px) {
-    header h1 { font-size: 32px; }
-    section { padding: 30px 15px; }
-}
-@media screen and (max-width: 768px) {
-    nav a { margin: 0 4px; padding: 6px 10px; font-size: 14px; }
-    header h1 { font-size: 28px; }
-    header p { font-size: 14px; }
-    h2 { font-size: 20px; }
-    .imagem-centro img { max-width: 300px; }
-}
-@media screen and (max-width: 480px) {
-    header img { height: 80px; }
-    nav a { font-size: 12px; margin: 0 3px; padding: 4px 6px; }
-    section { padding: 20px 10px; }
-    .imagem-centro img { max-width: 100%; }
-    .alunos-lista th, .alunos-lista td { padding: 8px; font-size: 12px; }
-}
-@media screen and (max-width: 360px) {
-    header h1 { font-size: 24px; }
-    header p { font-size: 12px; }
-    h2 { font-size: 18px; }
-}
-
-/* ===== Efeitos ===== */
-section.visible { opacity: 1; transform: translateY(0); }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invenções e Patentes</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #01b72f;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      text-transform: uppercase;
+    }
+    header img {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+    header p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #01b72f;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      background-color: #c8f0d4;
+      color: #006622;
+    }
+    section {
+      padding: 20px;
+      border-bottom: 2px solid #f4f4f4;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #01b72f;
+      text-transform: uppercase;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    .imagem-centro {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .imagem-centro img {
+      width: 90%;
+      max-width: 300px;
+      transition: transform 0.8s, filter 0.8s;
+    }
+    .imagem-centro img.visible {
+      transform: translateY(0) scale(1.05);
+      filter: brightness(1.1);
+    }
+    .imagem-centro p {
+      font-size: 14px;
+      color: #555;
+      margin-top: 5px;
+    }
+    footer {
+      background-color: #f0fdf4;
+      color: #555;
+      padding: 25px 20px;
+      border-top: 3px solid #01b72f;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .alunos-lista {
+      padding: 20px;
+      background-color: #f0fdf4;
+      border-top: 3px solid #01b72f;
+      border-bottom: 3px solid #01b72f;
+      text-align: center;
+    }
+    .alunos-lista table {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .alunos-lista th, .alunos-lista td {
+      padding: 10px;
+      border: 1px solid #01b72f;
+      text-align: left;
+      transition: background-color 0.3s;
+    }
+    .alunos-lista th {
+      background-color: #01b72f;
+      color: white;
+    }
+    .alunos-lista tr:nth-child(even) {
+      background-color: #e6f6ea;
+    }
+    .alunos-lista tr:hover td {
+      background-color: #c8f0d4;
+    }
+    .alunos-lista td.nome::before {
+      content: "🧑‍🎓 ";
+      margin-right: 5px;
+    }
+    @media screen and (max-width: 768px) {
+      header h1 { font-size: 28px; }
+      header p { font-size: 14px; }
+      nav a { margin: 0 5px; padding: 5px 8px; font-size: 14px; }
+      h2 { font-size: 20px; }
+    }
+    @media screen and (max-width: 480px) {
+      header img { height: 80px; }
+      nav a { font-size: 12px; margin: 0 4px; padding: 4px 6px; }
+      section { padding: 15px; }
+      .imagem-centro img { max-width: 100%; }
+      .alunos-lista th, .alunos-lista td { padding: 6px; font-size: 12px; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
+  <header>
     <img src="logo_umc.png" alt="Logo UMC">
-    <h1>Invenções e Patentes</h1>
+    <h1>INVENÇÕES E PATENTES</h1>
     <p>Universidade de Mogi das Cruzes - Sistema Tributário Nacional e Atividades Empresariais</p>
     <p>Professora: Vanessa Ester Ferreira Nunes</p>
-</header>
+  </header>
 
-<nav id="menu">
+  <nav id="menu">
     <a href="#introducao">Introdução</a>
     <a href="#conceito">Conceito de Patente</a>
     <a href="#tipos">Tipos de Patentes</a>
@@ -183,143 +169,159 @@ section.visible { opacity: 1; transform: translateY(0); }
     <a href="#conclusao">Conclusão</a>
     <a href="#alunos">Alunos</a>
     <a href="#referencias">Referências</a>
-</nav>
+  </nav>
 
-<section id="introducao">
-<h2>Introdução</h2>
-<p>As invenções representam o motor do progresso humano, transformando a sociedade em diversas áreas, como tecnologia, saúde, comunicação, transporte e energia. Desde ferramentas rudimentares até dispositivos tecnológicos avançados, cada invenção impacta diretamente a vida cotidiana e a economia mundial.</p>
-<p>A proteção legal das invenções é essencial para incentivar a inovação, garantindo que inventores possam explorar comercialmente suas ideias. Sem essa proteção, muitas criações inovadoras poderiam ser copiadas sem reconhecimento ou compensação.</p>
-<p>Além disso, o processo de patenteamento fomenta a pesquisa científica, a colaboração entre universidades e empresas, e fortalece a competitividade industrial.</p>
-<div class="imagem-centro">
-    <img src="crianca_lampada.png" alt="Criança segurando lâmpada, representando ideias e invenções">
-    <p><em>Figura 1: Representação simbólica da criatividade e do surgimento de novas ideias.</em></p>
-</div>
-</section>
+  <section id="introducao">
+    <h2>Introdução</h2>
+    <p>As invenções representam o motor do progresso humano, transformando a sociedade em diversas áreas, como tecnologia, saúde, comunicação, transporte e energia. Desde ferramentas rudimentares até dispositivos tecnológicos avançados, cada invenção impacta diretamente a vida cotidiana e a economia mundial.</p>
+    <p>A proteção legal das invenções é essencial para incentivar a inovação, garantindo que inventores possam explorar comercialmente suas ideias. Sem essa proteção, muitas criações inovadoras poderiam ser copiadas sem reconhecimento ou compensação.</p>
+    <p>Além disso, o processo de patenteamento fomenta a pesquisa científica, a colaboração entre universidades e empresas, e fortalece a competitividade industrial.</p>
+    <div class="imagem-centro">
+      <img src="crianca_lampada.png" alt="Criança segurando lâmpada, representando ideias e invenções">
+      <p><em>Figura 1: Representação simbólica da criatividade e do surgimento de novas ideias.</em></p>
+    </div>
+  </section>
 
-<section id="conceito">
-<h2>Conceito de Patente</h2>
-<p>Uma patente é um direito exclusivo concedido pelo Estado ao inventor, permitindo-lhe controlar o uso, produção e comercialização de sua invenção por um período determinado. Esse direito garante que terceiros não possam explorar comercialmente a invenção sem autorização.</p>
-<p>No Brasil, existem dois tipos principais:</p>
-<ul>
-<li><strong>Patente de Invenção (PI):</strong> dura 20 anos a partir do depósito e protege soluções completamente novas com aplicação industrial.</li>
-<li><strong>Modelo de Utilidade (MU):</strong> dura 15 anos e protege aperfeiçoamentos funcionais em produtos já existentes.</li>
-</ul>
-<p>Além disso, existe o <strong>Certificado de Adição</strong>, que protege melhorias introduzidas em uma invenção já patenteada.</p>
-<p>O sistema de patentes é regulamentado pelo <strong>Instituto Nacional da Propriedade Industrial (INPI)</strong>, garantindo que inventores tenham seus direitos reconhecidos e possam monetizar suas criações.</p>
-</section>
+  <section id="conceito">
+    <h2>Conceito de Patente</h2>
+    <p>Uma patente é um direito exclusivo concedido pelo Estado ao inventor, permitindo-lhe controlar o uso, produção e comercialização de sua invenção por um período determinado. Esse direito garante que terceiros não possam explorar comercialmente a invenção sem autorização.</p>
+    <p>No Brasil, existem dois tipos principais:</p>
+    <ul>
+      <li><strong>Patente de Invenção (PI):</strong> dura 20 anos a partir do depósito e protege soluções completamente novas com aplicação industrial.</li>
+      <li><strong>Modelo de Utilidade (MU):</strong> dura 15 anos e protege aperfeiçoamentos funcionais em produtos já existentes.</li>
+    </ul>
+    <p>Além disso, existe o <strong>Certificado de Adição</strong>, que protege melhorias introduzidas em uma invenção já patenteada.</p>
+    <p>O sistema de patentes é regulamentado pelo <strong>Instituto Nacional da Propriedade Industrial (INPI)</strong>, garantindo que inventores tenham seus direitos reconhecidos e possam monetizar suas criações.</p>
+  </section>
 
-<section id="tipos">
-<h2>Tipos de Patentes</h2>
-<ul>
-<li><strong>Patente de Invenção (PI):</strong> Protege criações inovadoras que apresentem novidade absoluta, aplicação industrial e atividade inventiva. Exemplos incluem novos medicamentos, máquinas e dispositivos tecnológicos.</li>
-<li><strong>Modelo de Utilidade (MU):</strong> Protege alterações em produtos já existentes que resultem em melhoria funcional ou eficiência, como utensílios domésticos aprimorados.</li>
-<li><strong>Certificado de Adição:</strong> Protege aperfeiçoamentos em invenções já patenteadas, permitindo que o inventor registre melhorias sem perder os direitos da invenção original.</li>
-</ul>
-<p>Existem ainda patentes internacionais e acordos de cooperação, como o <strong>PCT (Patent Cooperation Treaty)</strong>, que facilitam o reconhecimento de patentes em múltiplos países.</p>
-</section>
+  <section id="tipos">
+    <h2>Tipos de Patentes</h2>
+    <ul>
+      <li><strong>Patente de Invenção (PI):</strong> Protege criações inovadoras que apresentem novidade absoluta, aplicação industrial e atividade inventiva. Exemplos incluem novos medicamentos, máquinas e dispositivos tecnológicos.</li>
+      <li><strong>Modelo de Utilidade (MU):</strong> Protege alterações em produtos já existentes que resultem em melhoria funcional ou eficiência, como utensílios domésticos aprimorados.</li>
+      <li><strong>Certificado de Adição:</strong> Protege aperfeiçoamentos em invenções já patenteadas, permitindo que o inventor registre melhorias sem perder os direitos da invenção original.</li>
+    </ul>
+    <p>Existem ainda patentes internacionais e acordos de cooperação, como o <strong>PCT (Patent Cooperation Treaty)</strong>, que facilitam o reconhecimento de patentes em múltiplos países.</p>
+  </section>
 
-<section id="historico">
-<h2>Histórico das Patentes</h2>
-<p>O conceito de patente surgiu na Europa no século XV, com o objetivo de estimular a inovação e proteger inventores. Países como Inglaterra, França e Itália foram pioneiros nesse sistema. A primeira patente moderna foi concedida em Veneza em 1474.</p>
-<p>No Brasil, o sistema formal de patentes começou no início do século XX, mas sua consolidação ocorreu a partir da regulamentação pelo INPI na década de 1970. Desde então, o país adotou leis mais modernas para proteger inventores e estimular a pesquisa tecnológica.</p>
-<p>Historicamente, as patentes desempenharam papel fundamental na Revolução Industrial e na expansão tecnológica mundial, garantindo segurança jurídica para inventores e empresas inovadoras.</p>
-</section>
+  <section id="historico">
+    <h2>Histórico das Patentes</h2>
+    <p>O conceito de patente surgiu na Europa no século XV, com o objetivo de estimular a inovação e proteger inventores. Países como Inglaterra, França e Itália foram pioneiros nesse sistema. A primeira patente moderna foi concedida em Veneza em 1474.</p>
+    <p>No Brasil, o sistema formal de patentes começou no início do século XX, mas sua consolidação ocorreu a partir da regulamentação pelo INPI na década de 1970. Desde então, o país adotou leis mais modernas para proteger inventores e estimular a pesquisa tecnológica.</p>
+    <p>Historicamente, as patentes desempenharam papel fundamental na Revolução Industrial e na expansão tecnológica mundial, garantindo segurança jurídica para inventores e empresas inovadoras.</p>
+  </section>
 
-<section id="importancia">
-<h2>Importância das Patentes</h2>
-<p>As patentes desempenham um papel estratégico na economia e na inovação tecnológica. Entre suas principais funções, destacam-se:</p>
-<ul>
-<li>Estimular a criação de novas soluções e tecnologias, incentivando o desenvolvimento científico e industrial.</li>
-<li>Garantir retorno financeiro aos inventores e investidores, promovendo competitividade no mercado.</li>
-<li>Facilitar parcerias internacionais e transferência de tecnologia, fortalecendo o setor industrial e acadêmico.</li>
-<li>Proteger consumidores e empresas, evitando a circulação de produtos falsificados ou de baixa qualidade.</li>
-</ul>
-<p>Em suma, o sistema de patentes cria um ambiente favorável à inovação, contribuindo para o crescimento econômico e a modernização tecnológica do país.</p>
-</section>
+  <section id="importancia">
+    <h2>Importância das Patentes</h2>
+    <p>As patentes desempenham um papel estratégico na economia e na inovação tecnológica. Entre suas principais funções, destacam-se:</p>
+    <ul>
+      <li>Estimular a criação de novas soluções e tecnologias, incentivando o desenvolvimento científico e industrial.</li>
+      <li>Garantir retorno financeiro aos inventores e investidores, promovendo competitividade no mercado.</li>
+      <li>Facilitar parcerias internacionais e transferência de tecnologia, fortalecendo o setor industrial e acadêmico.</li>
+      <li>Proteger consumidores e empresas, evitando a circulação de produtos falsificados ou de baixa qualidade.</li>
+    </ul>
+    <p>Em suma, o sistema de patentes cria um ambiente favorável à inovação, contribuindo para o crescimento econômico e a modernização tecnológica do país.</p>
+  </section>
 
-<section id="exemplos">
-<h2>Exemplos de Invenções Patentadas</h2>
-<p>Ao longo da história, diversas invenções revolucionaram a sociedade e foram protegidas por patentes. Entre elas:</p>
-<ul>
-<li><strong>Lâmpada Incandescente:</strong> Thomas Edison patenteou a lâmpada, permitindo iluminação eficiente e segura.</li>
-<li><strong>Telefone:</strong> Alexander Graham Bell patenteou o telefone, transformando a comunicação global.</li>
-<li><strong>Computador Pessoal:</strong> Steve Jobs e Steve Wozniak patentearam componentes do primeiro Macintosh, impulsionando a era da computação doméstica.</li>
-</ul>
-<div class="imagem-centro">
-<img src="Edison-patent-light-bulb-l.jpg" alt="Desenho da lâmpada de Edison">
-<p><em>Figura 2: Esquema da lâmpada incandescente patenteada por Thomas Edison em 1879.</em></p>
-<img src="Alexander_Graham_Telephone_in_Newyork.jpg" alt="Telefone de Alexander Graham Bell">
-<p><em>Figura 3: Primeiro telefone patenteado por Alexander Graham Bell, marco da comunicação moderna.</em></p>
-<img src="Steve_Jobs_and_Macintosh_computer,_January_1984,_by_Bernard_Gotfryd_-_edited.jpg" alt="Steve Jobs com Macintosh">
-<p><em>Figura 4: Steve Jobs apresentando o Macintosh, representando inovação em computadores pessoais.</em></p>
-</div>
-</section>
+  <section id="exemplos">
+    <h2>Exemplos de Invenções Patentadas</h2>
+    <p>Ao longo da história, diversas invenções revolucionaram a sociedade e foram protegidas por patentes. Entre elas:</p>
+    <ul>
+      <li><strong>Lâmpada Incandescente:</strong> Thomas Edison patenteou a lâmpada, permitindo iluminação eficiente e segura.</li>
+      <li><strong>Telefone:</strong> Alexander Graham Bell patenteou o telefone, transformando a comunicação global.</li>
+      <li><strong>Computador Pessoal:</strong> Steve Jobs e Steve Wozniak patentearam componentes do primeiro Macintosh, impulsionando a era da computação doméstica.</li>
+    </ul>
+    <div class="imagem-centro">
+      <img src="Edison-patent-light-bulb-l.jpg" alt="Desenho da lâmpada de Edison">
+      <p><em>Figura 2: Esquema da lâmpada incandescente patenteada por Thomas Edison em 1879.</em></p>
 
-<section id="conclusao">
-<h2>Conclusão</h2>
-<p>O estudo de invenções e patentes permite compreender a relevância da proteção legal para inventores e empresas. Patentes incentivam o desenvolvimento tecnológico, fortalecem a economia e estimulam a competitividade global.</p>
-<p>Além disso, conhecer o processo de patenteamento é essencial para profissionais de diversas áreas, incluindo engenharia, administração, direito e pesquisa científica.</p>
-<p>Em última análise, o sistema de patentes contribui para a inovação, promovendo um ambiente de progresso contínuo e sustentável.</p>
-</section>
+      <img src="Alexander_Graham_Telephone_in_Newyork.jpg" alt="Telefone de Alexander Graham Bell">
+      <p><em>Figura 3: Primeiro telefone patenteado por Alexander Graham Bell, marco da comunicação moderna.</em></p>
 
-<section id="alunos" class="alunos-lista">
-<h2>Alunos</h2>
-<table>
-<tr><th>Nome</th><th>Matrícula</th></tr>
-<tr><td class="nome">Luiz Henrique Ataíde de Oliveira</td><td>11221101605</td></tr>
-<tr><td class="nome">Maria Eduarda Frois de Oliveira</td><td>11221100738</td></tr>
-<tr><td class="nome">Gabrielly Almeida Silva</td><td>11221102561</td></tr>
-<tr><td class="nome">Leonardo Monteiro Alves Brito</td><td>11221104713</td></tr>
-<tr><td class="nome">Rodrigo Moreno Franzini</td><td>11221100996</td></tr>
-<tr><td class="nome">Camilo Vaz</td><td>11221100605</td></tr>
-<tr><td class="nome">João Victor de Oliveira Sousa</td><td>11221101665</td></tr>
-<tr><td class="nome">Vinicius Dabague</td><td>11221101234</td></tr>
-<tr><td class="nome">Enzo de Souza Nascimento</td><td>11221101456</td></tr>
-</table>
-</section>
+      <img src="Steve_Jobs_and_Macintosh_computer,_January_1984,_by_Bernard_Gotfryd_-_edited.jpg" alt="Steve Jobs com Macintosh">
+      <p><em>Figura 4: Steve Jobs apresentando o Macintosh, representando inovação em computadores pessoais.</em></p>
+    </div>
+  </section>
 
-<section id="referencias">
-<h2>Referências Bibliográficas</h2>
-<ol>
-<li>INPI - Instituto Nacional da Propriedade Industrial. <em>Patentes: Guia Prático</em>. Disponível em: <a href="https://www.gov.br/inpi/pt-br" target="_blank" style="color: #01b72f; text-decoration: none;">https://www.gov.br/inpi/pt-br</a>.</li>
-<li>BRASIL. Lei nº 9.279, de 14 de maio de 1996. <em>Lei da Propriedade Industrial</em>. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/leis/l9279.htm" target="_blank" style="color: #01b72f; text-decoration: none;">https://www.planalto.gov.br/ccivil_03/leis/l9279.htm</a>.</li>
-<li>EDISON, T. <em>Patents and Innovation: A Historical Overview</em>. New York: Edison Press, 1880.</li>
-<li>BELL, A. G. <em>The Telephone and Its Impact on Society</em>. London: Communication Press, 1885.</li>
-<li>WOLFE, S.; JOBS, S.; WOZNIAK, S. <em>The Personal Computer Revolution</em>. California: Silicon Valley Publishing, 1985.</li>
-</ol>
-</section>
+  <section id="conclusao">
+    <h2>Conclusão</h2>
+    <p>O estudo de invenções e patentes permite compreender a relevância da proteção legal para inventores e empresas. Patentes incentivam o desenvolvimento tecnológico, fortalecem a economia e estimulam a competitividade global.</p>
+    <p>Além disso, conhecer o processo de patenteamento é essencial para profissionais de diversas áreas, incluindo engenharia, administração, direito e pesquisa científica.</p>
+    <p>Em última análise, o sistema de patentes contribui para a inovação, promovendo um ambiente de progresso contínuo e sustentável.</p>
+  </section>
 
-<footer>
-<p><strong>Universidade de Mogi das Cruzes</strong> - Trabalho Acadêmico</p>
-<p>Disciplina: Sistema Tributário Nacional e Atividades Empresariais</p>
-<p>Professora: Vanessa Ester Ferreira Nunes</p>
-</footer>
+  <section id="alunos" class="alunos-lista">
+    <h2>Alunos</h2>
+    <div class="tabela-container">
+      <table>
+        <tr><th>Nome</th><th>Matrícula</th></tr>
+        <tr><td class="nome">Luiz Henrique Ataíde de Oliveira</td><td>11221101605</td></tr>
+        <tr><td class="nome">Maria Eduarda Frois de Oliveira</td><td>11221100738</td></tr>
+        <tr><td class="nome">Gabrielly Almeida Silva</td><td>11221102561</td></tr>
+        <tr><td class="nome">Leonardo Monteiro Alves Brito</td><td>11221104713</td></tr>
+        <tr><td class="nome">Rodrigo Moreno Franzini</td><td>11221100996</td></tr>
+        <tr><td class="nome">Camilo Vaz</td><td>11221100605</td></tr>
+        <tr><td class="nome">João Victor de Oliveira Sousa</td><td>11221101665</td></tr>
+        <tr><td class="nome">Vinicius Dabague</td><td>11221101234</td></tr>
+        <tr><td class="nome">Enzo de Souza Nascimento</td><td>11221101456</td></tr>
+      </table>
+    </div>
+  </section>
 
-<script>
-// Destacar link ativo no menu e animação das seções
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
+  <section id="referencias">
+    <h2>Referências Bibliográficas</h2>
+    <ol>
+      <li>INPI - Instituto Nacional da Propriedade Industrial. <em>Patentes: Guia Prático</em>. Disponível em: <a href="https://www.gov.br/inpi/pt-br" target="_blank" style="color: #01b72f; text-decoration: none;">https://www.gov.br/inpi/pt-br</a>.</li>
+      <li>BRASIL. Lei nº 9.279, de 14 de maio de 1996. <em>Lei da Propriedade Industrial</em>. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/leis/l9279.htm" target="_blank" style="color: #01b72f; text-decoration: none;">https://www.planalto.gov.br/ccivil_03/leis/l9279.htm</a>.</li>
+      <li>EDISON, T. <em>Patents and Innovation: A Historical Overview</em>. New York: Edison Press, 1880.</li>
+      <li>BELL, A. G. <em>The Telephone and Its Impact on Society</em>. London: Communication Press, 1885.</li>
+      <li>WOLFE, S.; JOBS, S.; WOZNIAK, S. <em>The Personal Computer Revolution</em>. California: Silicon Valley Publishing, 1985.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p><strong>Universidade de Mogi das Cruzes</strong> - Trabalho Acadêmico</p>
+    <p>Disciplina: Sistema Tributário Nacional e Atividades Empresariais</p>
+    <p>Professora: Vanessa Ester Ferreira Nunes</p>
+    <p style="margin-top: 10px;">*:))))*</p>
+  </footer>
+
+  <script>
+    // Destacar link ativo no menu
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
         const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) current = section.getAttribute('id');
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-    });
-
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < window.innerHeight - 100) {
-            section.classList.add('visible');
-            section.querySelectorAll('img').forEach(img => img.classList.add('visible'));
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
         }
-    });
-});
-window.addEventListener('load', () => window.dispatchEvent(new Event('scroll')));
-</script>
+      });
 
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+      // Fade-in sections e imagens
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight - 100;
+        if (sectionTop < triggerPoint) {
+          section.classList.add('visible');
+          const imgs = section.querySelectorAll('img');
+          imgs.forEach(img => img.classList.add('visible'));
+        }
+      });
+    });
+
+    window.addEventListener('load', () => {
+      window.dispatchEvent(new Event('scroll'));
+    });
+  </script>
 </body>
 </html>
