@@ -39,7 +39,7 @@ header p { font-size: 16px; }
 /* ===== Menu ===== */
 nav {
     background-color: #ffffff;
-    padding: 12px;
+    padding: 10px 5px;
     text-align: center;
     position: sticky;
     top: 0;
@@ -50,13 +50,14 @@ nav {
 }
 nav a {
     display: inline-block;
-    margin: 0 8px;
+    margin: 0 5px;
     text-decoration: none;
     color: #01b72f;
     font-weight: bold;
-    padding: 8px 14px;
+    padding: 8px 12px;
     border-radius: 8px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 nav a:hover, nav a.active {
     background-color: #c8f0d4;
@@ -100,8 +101,7 @@ section {
 }
 
 /* ===== Listas e tabelas ===== */
-ul { margin-left: 20px; margin-bottom: 15px; }
-ol { margin-left: 20px; margin-bottom: 15px; }
+ul, ol { margin-left: 20px; margin-bottom: 15px; }
 .alunos-lista table {
     width: 100%;
     max-width: 700px;
@@ -133,22 +133,31 @@ footer {
 }
 
 /* ===== Responsividade ===== */
+@media screen and (max-width: 1200px) {
+    section { padding: 35px 15px; }
+}
 @media screen and (max-width: 992px) {
     header h1 { font-size: 32px; }
     section { padding: 30px 15px; }
 }
 @media screen and (max-width: 768px) {
-    nav a { margin: 0 6px; padding: 6px 10px; font-size: 14px; }
+    nav a { margin: 0 4px; padding: 6px 10px; font-size: 14px; }
     header h1 { font-size: 28px; }
     header p { font-size: 14px; }
     h2 { font-size: 20px; }
+    .imagem-centro img { max-width: 300px; }
 }
 @media screen and (max-width: 480px) {
     header img { height: 80px; }
-    nav a { font-size: 12px; margin: 0 4px; padding: 4px 6px; }
+    nav a { font-size: 12px; margin: 0 3px; padding: 4px 6px; }
     section { padding: 20px 10px; }
     .imagem-centro img { max-width: 100%; }
     .alunos-lista th, .alunos-lista td { padding: 8px; font-size: 12px; }
+}
+@media screen and (max-width: 360px) {
+    header h1 { font-size: 24px; }
+    header p { font-size: 12px; }
+    h2 { font-size: 18px; }
 }
 
 /* ===== Efeitos ===== */
