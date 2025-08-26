@@ -73,6 +73,8 @@
       font-size: 22px;
       margin-bottom: 15px;
     }
+
+    /* Estilo aprimorado das imagens */
     .imagem-centro {
       text-align: center;
       margin: 20px 0;
@@ -80,17 +82,26 @@
     .imagem-centro img {
       width: 90%;
       max-width: 300px;
-      transition: transform 0.8s, filter 0.8s;
+      transition: transform 0.8s, filter 0.8s, box-shadow 0.5s;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
     }
     .imagem-centro img.visible {
       transform: translateY(0) scale(1.05);
       filter: brightness(1.1);
     }
+    .imagem-centro img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+    }
     .imagem-centro p {
       font-size: 14px;
       color: #555;
-      margin-top: 5px;
+      margin-top: 8px;
+      font-style: italic;
+      text-align: center;
     }
+
     footer {
       background-color: #f0fdf4;
       color: #555;
@@ -213,19 +224,16 @@
 
   <section id="importancia">
     <h2>Importância das Patentes</h2>
-    <p>As patentes desempenham um papel estratégico na economia e na inovação tecnológica. Entre suas principais funções, destacam-se:</p>
     <ul>
       <li>Estimular a criação de novas soluções e tecnologias, incentivando o desenvolvimento científico e industrial.</li>
       <li>Garantir retorno financeiro aos inventores e investidores, promovendo competitividade no mercado.</li>
       <li>Facilitar parcerias internacionais e transferência de tecnologia, fortalecendo o setor industrial e acadêmico.</li>
       <li>Proteger consumidores e empresas, evitando a circulação de produtos falsificados ou de baixa qualidade.</li>
     </ul>
-    <p>Em suma, o sistema de patentes cria um ambiente favorável à inovação, contribuindo para o crescimento econômico e a modernização tecnológica do país.</p>
   </section>
 
   <section id="exemplos">
     <h2>Exemplos de Invenções Patentadas</h2>
-    <p>Ao longo da história, diversas invenções revolucionaram a sociedade e foram protegidas por patentes. Entre elas:</p>
     <ul>
       <li><strong>Lâmpada Incandescente:</strong> Thomas Edison patenteou a lâmpada, permitindo iluminação eficiente e segura.</li>
       <li><strong>Telefone:</strong> Alexander Graham Bell patenteou o telefone, transformando a comunicação global.</li>
